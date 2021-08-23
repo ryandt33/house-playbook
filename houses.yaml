@@ -1,0 +1,24 @@
+--- #The mean MEAN stack file
+- hosts: localhost
+  connection: local
+  remote_user: root
+  become: yes
+  become_method: sudo
+  vars:
+    #variable needed during node installation
+    var_node: /tmp
+    ansible_dir: /home/{your-user-id}/house-playbook
+    install_dir: /home/{your-user-id}/the-house-system
+    site_name: houses.example.com
+    api_name: house-api.example.com
+  tasks:
+    # Install MongoDB
+    - include: tasks/mongodb.yaml
+    # Install Node.js
+    - include: tasks/nodejs.yaml
+    # Clone the repo
+    - include: tasks/git.yaml
+    # Fetch deps
+    - include: house.yaml
+    # Install Nginx
+    - include: tasks/nginx.yaml

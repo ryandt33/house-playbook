@@ -1,0 +1,14 @@
+{
+  "mongoURI": "mongodb://localhost/houses",
+  "jwtSecret": "secret",
+  "mbAPIKey": "123",
+  "mbSuffix": "com",
+  "mgURL": "api.mailgun.net/v3/{domain name}",
+  "mgAPI": "321",
+  "mgEmail": "myemail@mailgun.com",
+  "houseURL": "https://your.house.system",
+  "orgName": "Your org name",
+  "useLL": false,
+  "llEndPoint": "https://url/data/xAPI",
+  "llHead": "Basic abcd"
+}

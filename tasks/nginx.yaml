@@ -1,0 +1,35 @@
+- name: ensure nginx is at the latest version
+  apt: name=nginx state=latest
+  become: yes
+- name: start nginx
+  service:
+    name: nginx
+    state: started
+  become: yes
+- name: copy the nginx config file and restart nginx
+  copy:
+    content: "server {server_name     {{ site_name }};location / {proxy_pass http://127.0.0.1:3000;}}"
+    dest: "/etc/nginx/sites-available/house.conf"
+  become: yes
+- name: copy the nginx config file and restart nginx
+  copy:
+    content: "server {server_name     {{ api_name }};location / {proxy_pass http://127.0.0.1:5000;}}"
+    dest: "/etc/nginx/sites-available/house-api.conf"
+  become: yes
+- name: create symlink
+  file:
+    src: "/etc/nginx/sites-available/house.conf"
+    dest: "/etc/nginx/sites-enabled/house"
+    state: link
+  become: yes
+- name: create symlink
+  file:
+    src: "/etc/nginx/sites-available/house-api.conf"
+    dest: "/etc/nginx/sites-enabled/house-api"
+    state: link
+  become: yes
+- name: restart nginx
+  service:
+    name: nginx
+    state: restarted
+  become: yes

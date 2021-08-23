@@ -1,0 +1,28 @@
+- name: Install "dependencies" for umbrella app
+  community.general.npm:
+    path: "{{ install_dir }}"
+
+- name: Install "dependencies" for server
+  community.general.npm:
+    path: "{{ install_dir }}/srv"
+
+- name: Install "dependencies" for client
+  community.general.yarn:
+    path: "{{ install_dir }}/client"
+
+- name: Create runtime-config.json
+  copy:
+    content: "window['runConfig']={apiURL:'https://{{ api_name }}'};"
+    dest: "{{ install_dir }}/client/public/runtime-config.js"
+  become: yes
+
+- name: Copy config file
+  copy:
+    src: "{{ ansible_dir }}/default.json"
+    dest: "{{ install_dir }}/config"
+  become: yes
+
+- name: Build the client
+  command: npm run build
+  args:
+    chdir: "{{ install_dir }}/client"

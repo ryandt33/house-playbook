@@ -1,0 +1,10 @@
+- name: Install git
+  apt:
+    name: git
+    state: present
+    update_cache: yes
+
+- git:
+    repo: https://github.com/ryandt33/the-house-system.git
+    dest: "{{ install_dir }}"
+    version: beta-v0.1
