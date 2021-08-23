@@ -6,6 +6,30 @@ This is setup to work on <i>Ubuntu 20.04</i>, with other distros YMMV.
 
 Secondly, it is designed to install on the localhost, however, you can edit the configuration for remote installation easily.
 
+If you would like to try it out before installing, you can access a demo server at <a href="https://house-demo.for.education">https://house-demo.for.education/</a>
+
+<table>
+<thead>
+<th>
+<td>User Role</td>
+<td>User name</td>
+<td>Password</td>
+</th>
+</thead>
+<tbody>
+<tr>
+<td>Student</td>
+<td>billveum@fake.email</td>
+<td>house-demo</td>
+</tr>
+<tr>
+<td>Teacher</td>
+<td>dillon@gradythisisnotarealemail.com</td>
+<td>house-demo</td>
+</tr>
+</tbody>
+</table>
+
 ## Installation
 
 On a fresh Ubuntu installation, update your system.
