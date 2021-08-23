@@ -8,13 +8,15 @@ Secondly, it is designed to install on the localhost, however, you can edit the 
 
 If you would like to try it out before installing, you can access a demo server at <a href="https://house-demo.for.education">https://house-demo.for.education/</a>
 
+Please contact <a href="mailto:ryan@for.education">the creator</a> if you would like to trial admin access.
+
 <table>
 <thead>
-<th>
-<td>User Role</td>
-<td>User name</td>
-<td>Password</td>
-</th>
+<tr>
+<th>User Role</th>
+<th>User name</th>
+<th>Password</th>
+</tr>
 </thead>
 <tbody>
 <tr>
@@ -128,3 +130,7 @@ Run the production server and api server.
 ```
 npm run production
 ```
+
+## Support/Communicating
+
+If you would like to contribute, need help with deployment, or would just like to be in touch, feel free to email me at <a href="mailto:ryan@for.education">ryan@for.education</a>.
