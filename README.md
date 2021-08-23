@@ -70,7 +70,7 @@ Set your house system details in /default.json
 Run the following:
 
 ```
-ansible-playbook houses.yaml
+sudo ansible-playbook houses.yaml
 ```
 
 ## Setup certbot
@@ -83,4 +83,24 @@ sudo snap install core; sudo snap refresh core
 sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 sudo certbot --nginx -d houses.example.com -d house-api.example.com
+```
+
+## Run the server
+
+Go into your server directory.
+
+```
+cd ~/the-house-system/
+
+npm run server-production
+```
+
+Fill out the prompts as they come up.
+
+Close the server with CTRL+C.
+
+Run the production server and api server.
+
+```
+npm run production
 ```

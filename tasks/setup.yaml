@@ -12,7 +12,7 @@
 
 - name: Create runtime-config.json
   copy:
-    content: "window['runConfig']={apiURL:'https://{{ api_name }}'};"
+    content: "window['runConfig']={apiURL:'https://{{ api_name }}/'};"
     dest: "{{ install_dir }}/client/public/runtime-config.js"
   become: yes
 

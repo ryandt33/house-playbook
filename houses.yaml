@@ -19,6 +19,6 @@
     # Clone the repo
     - include: tasks/git.yaml
     # Fetch deps
-    - include: house.yaml
+    - include: task/setup.yaml
     # Install Nginx
     - include: tasks/nginx.yaml
